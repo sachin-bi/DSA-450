@@ -1,9 +1,25 @@
 #include <iostream>
 using namespace std;
 
+void print2d(int arr[][3]) //-----look into syntax....compiler finds it by (c*i+j)
+{
+    //  //----printing 2d array-------
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            cout << " " << arr[i][j]; // for coloumn wise - arr[j][i]
+        }
+        cout << endl;
+    }
+    cout << "---printed using function---" << endl;
+}
+
 int main()
 {
     int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+    print2d(arr);
 
     // //----this for input of 2d Array----
     //     for (int i = 0; i < 3; i++)
@@ -15,19 +31,6 @@ int main()
     //         }
     //         cout << endl;
     //     }
-
-
-    //  //----printing 2d array-------
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
-            cout << " " << arr[i][j]; // for coloumn wise - arr[j][i]
-        }
-        cout << endl;
-    }
-    cout << "---printed---" << endl;
-
 
     //  //-----printing row sum of 2d Array------
     for (int i = 0; i < 3; i++)
