@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-int first_occur(vector<int> arr, int target)
+int last_occur(vector<int> arr, int target)
 {
     int e = arr.size() - 1;
     int idx = -1;
@@ -26,7 +26,7 @@ int first_occur(vector<int> arr, int target)
             e = mid - 1; // search left
         }
         mid = s + (e - s) / 2;
-        }
+    }
     return idx;
 }
 
@@ -37,7 +37,7 @@ int main()
     // int e = sizeof(arr)/sizeof(int) - 1;
     vector<int> arr{1, 3, 4, 4, 4, 4, 4, 6, 7, 9};
     int target = 4;
-    int occur_idx = first_occur(arr, target);
+    int occur_idx = last_occur(arr, target);
 
     if (occur_idx == -1)
     {
@@ -46,7 +46,7 @@ int main()
     else
     {
         cout << endl
-             << occur_idx << " -- idx is LAST occurence of " << arr[occur_idx] << endl;
+             << occur_idx << " -- idx is LAST occurence of " << arr[occur_idx];
     }
 
     return 0;
